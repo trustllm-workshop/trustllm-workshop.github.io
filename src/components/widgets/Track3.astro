@@ -1,0 +1,378 @@
+---
+import type { Brands as Props } from '~/types';
+import Headline from '~/components/ui/Headline.astro';
+import Button from '../ui/Button.astro';
+import { Icon } from 'astro-icon/components';
+const { title = '', subtitle = '', tagline = '', id } = Astro.props;
+---
+
+<!-- <div class="bg-blue-50 pb-8"> -->
+
+<div class=" pb-8">
+  <div class="max-w-7xl mx-auto pt-8" id={id}>
+    <Headline title={title} subtitle={subtitle} tagline={tagline} />
+    <div class="flex gap-8 justify-center">
+      <!-- <Button variant="secondary" href={'#'}>
+        <span class="mr-2">{'Issues'}</span>
+        <Icon name="tabler:chevron-right" class="w-6 h-6" />
+      </Button> -->
+      <Button variant="secondary">
+        <span class="mr-2">{'Submission'}</span>
+        <Icon name="tabler:ban" class="w-6 h-6" />
+      </Button>
+    </div>
+
+    <!--   
+  <h2 class="text-center text-2xl md:text-3xl py-8">Leaderboard</h2>
+
+  <div class="px-4 sm:px-6 lg:px-8">
+    <div class="sm:flex sm:items-center">
+      <div class="sm:flex-auto">
+        <li>Participating Teams: 52</li>
+        <li>Countries and Regions: 11</li>
+        <li>Submissions: 600+</li>
+        <p class="mt-2 text-sm text-gray-700">
+          This track was characterized by the greatest diversity among this challenge, with participation from teams
+          representing up to 11 countries and regions. The difference in scores between the top 5 teams was less than 10
+          points.
+        </p>
+      </div>
+    </div>
+    <div class="my-8 flow-root">
+      <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+        <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
+          <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 sm:rounded-lg">
+            <table class="min-w-full divide-y divide-gray-300">
+              <thead class="bg-gray-50">
+                <tr>
+                  <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">
+                    Name
+                  </th>
+                  <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"> Rank </th>
+                  <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
+                    Country / Region
+                  </th>
+                  <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"> Institution </th>
+                  <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
+                    Overall Score (primary)
+                  </th>
+                  <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"> Team Name </th>
+                  <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"> CH1 Score </th>
+                  <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"> CH2 Score </th>
+                  <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"> CH3 Score</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200 bg-white" id="track3-table-body"> </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="track3-pagination" class="my-4 flex justify-center items-center"></div> -->
+    <h2 class="text-center text-2xl md:text-3xl py-8">Introduction</h2>
+    <p class="text-gray-700">
+      The evolution of Artificial Intelligence (AI) reflects its increasing capability and integration 
+      into our daily lives, from basic automated tools to sophisticated, autonomous systems. Initially, 
+      AI systems were simple agents performing goal-directed actions without specific human commands. 
+      Over time, these evolved into Multimodal Large Language Models 
+      (MLLMs, e.g., GPT-4 / GPT-4o and Gemini), which not only execute complex tasks but also enhance 
+      decision-making through advanced language understanding and generation capabilities.
+       The most advanced tier of AI development includes ethically aligned, trustworthy agents. 
+       These agents are designed to operate reliably within ethical and safety frameworks,
+        illustrating both the benefits and the essential need to manage the risks associated with AI's 
+        integration into society. This tiered framework—from basic agents, through linguistically skilled
+         LLMs and MLLMs, to ethically guided trustworthy agents—underscores the progression and potential 
+         of AI in enhancing human capabilities and addressing complex challenges.
+    </p>
+    <!-- <li class="mt-4">
+      <strong class="mr-4">More complex environments: </strong>Agents can operate autonomously, utilizing tools [2, 3]
+      or interacting with their environment [4]. For instance, scenarios involving tool use may incorporate extensive
+      external network or database information. In embodied scenarios, agents interact in real-time with real or
+      simulated environments. Traditional evaluations of trustworthy safety in Large Language Models (LLMs) typically
+      focus only on input and output, hence, a more comprehensive assessment method is necessary to evaluate the safety
+      of agents.
+    </li>
+    <li class="mt-4">
+      <strong class="mr-4">More complex agent systems:</strong>The current popular mode of agent interaction involves
+      agent systems [1-3], where multiple agents collaborate. This differs significantly from the traditional
+      single-point security evaluations of LLMs in terms of trustworthiness. We need to consider not only the
+      trustworthy of individual agents within a group but also the overall system’s trustworthiness. Therefore, a more
+      comprehensive and suitable evaluation framework for the trustworthiness of agent systems is required.
+    </li>
+    <h2 class="text-center text-2xl md:text-3xl py-8">Participation</h2>
+    <p class="text-gray-700">
+      <li class="mt-4">
+        <strong class="mr-4">Stage1:</strong>Submit your proposal in the form of a short document. It will be reviewed
+        by an expert committee.
+      </li>
+      <li>
+        <strong class="mr-4">Stage2:</strong> We will select the top 5 short documents, providing data resources and computational
+        resources to further advance research.
+      </li>
+      <li>
+        <strong class="mr-4">Stage3:</strong> For outstanding proposals, we will create new benchmarks and open them up in
+        a competitive format.
+      </li>
+    </p> -->
+    <!-- <h2 class="text-center text-2xl md:text-3xl py-8">Award</h2>
+    <div class="flex justify-center">
+      <table class="bg-white">
+        <tbody>
+          <tr>
+            <td class="w-64 border px-4 py-2">Outstanding Champion</td>
+            <td class="w-64 border px-4 py-2">USD $10,000</td>
+          </tr>
+          <tr class="bg-gray-50">
+            <td class="border px-4 py-2">Honorable Runner-up</td>
+            <td class="border px-4 py-2">USD $3,000</td>
+          </tr>
+          <tr class="bg-gray-50">
+            <td class="border px-4 py-2">Innovation Award</td>
+            <td class="border px-4 py-2">USD $3,000</td>
+          </tr>
+        </tbody>
+      </table>
+    </div> -->
+    <div class="flex gap-8 justify-center mt-4">
+      <Button variant="secondary" href={'/challenges/track2'}>
+        <span>Check Details</span>
+      </Button>
+    </div>
+    <!-- <h2 class="text-center text-2xl md:text-3xl py-8">Contact</h2>
+    <a
+      href="https://github.com/adwardlee/mllm_defense_challenge/issues"
+      class="hover:underline text-sky-600 font-medium">GitHub issue</a
+    >
+    <h2 class="text-center text-2xl md:text-3xl py-8">Related Literature</h2>
+    <li>
+      <a href="https://arxiv.org/abs/2303.17760" class="hover:underline text-sky-600 font-medium"
+        >[1] CAMEL: Communicative Agents for "Mind" Exploration of Large Language Model Society</a
+      >
+    </li>
+    <li>
+      <a href="https://arxiv.org/abs/2308.00352" class="hover:underline text-sky-600 font-medium"
+        >[2] MetaGPT: Meta Programming for A Multi-Agent Collaborative Framework</a
+      >
+    </li>
+    <li>
+      <a href="https://github.com/Significant-Gravitas/AutoGPT" class="hover:underline text-sky-600 font-medium"
+        >[3] AutoGPT</a
+      >
+    </li>
+    <li>
+      <a href="https://arxiv.org/abs/2307.15818" class="hover:underline text-sky-600 font-medium"
+        >[4] RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control</a
+      >
+    </li> -->
+  </div>
+</div>
+
+<script>
+  const track3Data = [
+    {
+      rank: 'Lindsay',
+      country: 'Developer',
+      institution: 'lindsay',
+      score: 'Member',
+      teamName: 'asdf',
+      ch1Score: 'asdf',
+      ch2Score: 'asdf',
+      ch3Score: '12',
+      name: 'asd',
+    },
+    {
+      rank: 'Lindsay',
+      country: 'Developer',
+      institution: 'lindsay',
+      score: 'Member',
+      teamName: 'asdf',
+      ch1Score: 'asdf',
+      ch2Score: 'asdf',
+      ch3Score: '12',
+      name: 'asd',
+    },
+    {
+      rank: 'Lindsay',
+      country: 'Developer',
+      institution: 'lindsay',
+      score: 'Member',
+      teamName: 'asdf',
+      ch1Score: 'asdf',
+      ch2Score: 'asdf',
+      ch3Score: '12',
+      name: 'asd',
+    },
+    {
+      rank: 'Lindsay',
+      country: 'Developer',
+      institution: 'lindsay',
+      score: 'Member',
+      teamName: 'asdf',
+      ch1Score: 'asdf',
+      ch2Score: 'asdf',
+      ch3Score: '12',
+      name: 'asd',
+    },
+    {
+      rank: 'Lindsay',
+      country: 'Developer',
+      institution: 'lindsay',
+      score: 'Member',
+      teamName: 'asdf',
+      ch1Score: 'asdf',
+      ch2Score: 'asdf',
+      ch3Score: '12',
+      name: 'asd',
+    },
+    {
+      rank: 'Lindsay',
+      country: 'Developer',
+      institution: 'lindsay',
+      score: 'Member',
+      teamName: 'asdf',
+      ch1Score: 'asdf',
+      ch2Score: 'asdf',
+      ch3Score: '12',
+      name: 'asd',
+    },
+    {
+      rank: 'Lindsay',
+      country: 'Developer',
+      institution: 'lindsay',
+      score: 'Member',
+      teamName: 'asdf',
+      ch1Score: 'asdf',
+      ch2Score: 'asdf',
+      ch3Score: '12',
+      name: 'asd',
+    },
+    {
+      rank: 'Lindsay',
+      country: 'Developer',
+      institution: 'lindsay',
+      score: 'Member',
+      teamName: 'asdf',
+      ch1Score: 'asdf',
+      ch2Score: 'asdf',
+      ch3Score: '12',
+      name: 'asd',
+    },
+    {
+      rank: 'Lindsay',
+      country: 'Developer',
+      institution: 'lindsay',
+      score: 'Member',
+      teamName: 'asdf',
+      ch1Score: 'asdf',
+      ch2Score: 'asdf',
+      ch3Score: '12',
+      name: 'asd',
+    },
+    {
+      rank: 'Lindsay',
+      country: 'Developer',
+      institution: 'lindsay',
+      score: 'Member',
+      teamName: 'asdf',
+      ch1Score: 'asdf',
+      ch2Score: 'asdf',
+      ch3Score: '12',
+      name: 'asd',
+    },
+    {
+      rank: 'Lindsay',
+      country: 'Developer',
+      institution: 'lindsay',
+      score: 'Member',
+      teamName: 'asdf',
+      ch1Score: 'asdf',
+      ch2Score: 'asdf',
+      ch3Score: '12',
+      name: 'asd',
+    },
+    {
+      rank: 'Lindsay',
+      country: 'Developer',
+      institution: 'lindsay',
+      score: 'Member',
+      teamName: 'asdf',
+      ch1Score: 'asdf',
+      ch2Score: 'asdf',
+      ch3Score: '12',
+      name: 'asd',
+    },
+    // More track3Data...
+  ];
+
+  const pageSize = 10;
+  let currentPage = 1;
+
+  function padtrack1Data(track3Data) {
+    const remainder = track3Data.length % pageSize;
+    if (remainder !== 0) {
+      const padCount = pageSize - remainder;
+      for (let i = 0; i < padCount; i++) {
+        track3Data.push({
+          rank: '',
+          country: '',
+          institution: '',
+          score: '',
+          teamName: '',
+          ch1Score: '',
+          ch2Score: '',
+          ch3Score: '',
+          name: '&nbsp;',
+        });
+      }
+    }
+  }
+
+  function renderTable(page) {
+    const startIndex = (page - 1) * pageSize;
+    const endIndex = Math.min(startIndex + pageSize, track3Data.length);
+    const tableBody = document.getElementById('track3-table-body');
+    if (!tableBody) return;
+    tableBody.innerHTML = '';
+    for (let i = startIndex; i < endIndex; i++) {
+      const team = track3Data[i];
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">${team.name}</td>
+        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">${team.rank}</td>
+        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">${team.country}</td>
+        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">${team.institution}</td>
+        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">${team.score}</td>
+        <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">${team.teamName}</td>
+        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">${team.ch1Score}</td>
+        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">${team.ch2Score}</td>
+        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">${team.ch3Score}</td>
+      `;
+      tableBody.appendChild(row);
+    }
+  }
+
+  function renderPagination() {
+    const totalPages = Math.ceil(track3Data.length / pageSize);
+    const pagination = document.getElementById('track3-pagination');
+    if (!pagination) return;
+    pagination.innerHTML = '';
+    for (let i = 1; i <= totalPages; i++) {
+      const button = document.createElement('button');
+      button.textContent = i.toString();
+      button.classList.add('px-3', 'py-1', 'mr-2', 'border', 'rounded', 'bg-white', 'hover:bg-gray-100');
+      if (i === currentPage) {
+        button.classList.add('font-bold');
+      }
+      button.addEventListener('click', () => {
+        currentPage = i;
+        renderTable(currentPage);
+        renderPagination();
+      });
+      pagination.appendChild(button);
+    }
+  }
+  padtrack1Data(track3Data);
+  renderTable(currentPage);
+  renderPagination();
+</script>

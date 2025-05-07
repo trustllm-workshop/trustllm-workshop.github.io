@@ -1,0 +1,346 @@
+---
+import type { Brands as Props } from '~/types';
+import Headline from '~/components/ui/Headline.astro';
+import Button from '../ui/Button.astro';
+import { Icon } from 'astro-icon/components';
+const { title = '', subtitle = '', tagline = '', id } = Astro.props;
+---
+
+<div class="max-w-7xl mx-auto pt-8 pb-8" id={id}>
+  <Headline title={title} subtitle={subtitle} tagline={tagline} />
+  <div class="flex gap-8 justify-center">
+    <Button variant="secondary" href={'https://github.com/adwardlee/mllm_defense_challenge'}>
+      <span class="mr-2">{'Github'}</span>
+      <Icon name="tabler:chevron-right" class="w-6 h-6" />
+    </Button><Button variant="secondary">
+      <span class="mr-2">{'Submission'}</span>
+      <Icon name="tabler:ban" class="w-6 h-6" />
+    </Button>
+  </div>
+
+  <!-- <h2 class="text-center text-2xl md:text-3xl py-8">Leaderboard</h2>
+
+  <div class="px-4 sm:px-6 lg:px-8">
+    <div class="sm:flex sm:items-center">
+      <div class="sm:flex-auto">
+        <li>Participating Teams: 52</li>
+        <li>Countries and Regions: 11</li>
+        <li>Submissions: 600+</li>
+        <p class="mt-2 text-sm text-gray-700">
+          This track was characterized by the greatest diversity among this challenge, with participation from teams
+          representing up to 11 countries and regions. The difference in scores between the top 5 teams was less than 10
+          points.
+        </p>
+      </div>
+    </div>
+    <div class="my-8 flow-root">
+      <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+        <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
+          <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 sm:rounded-lg">
+            <table class="min-w-full divide-y divide-gray-300">
+              <thead class="bg-gray-50">
+                <tr>
+                  <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">
+                    Name
+                  </th>
+                  <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"> Rank </th>
+                  <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
+                    Country / Region
+                  </th>
+                  <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"> Institution </th>
+                  <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
+                    Overall Score (primary)
+                  </th>
+                  <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"> Team Name </th>
+                  <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"> CH1 Score </th>
+                  <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"> CH2 Score </th>
+                  <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"> CH3 Score</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200 bg-white" id="track2-table-body"> </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="track2-pagination" class="my-4 flex justify-center items-center"></div> -->
+  <h2 class="text-center text-2xl md:text-3xl py-8">Introduction</h2>
+  <p class="text-gray-700">
+    Multimodal Large Language Models (MLLMs) possess the capability to process images and perform visual 
+    question-and-answer tasks. However, when input images or texts contain malicious content or are subtly 
+    altered through perturbations, MLLMs can generate harmful responses or experience degraded performance
+     across various visual tasks. This vulnerability represents a significant challenge to the
+      trustworthiness and safety of MLLMs, underscoring the need for robust defense mechanisms. 
+      The primary goal of this challenge is to devise innovative strategies and techniques to safeguard 
+      MLLMs against attacks that leverage their multimodal capabilities.
+
+  </p>
+  <!-- <h2 class="text-center text-2xl md:text-3xl py-8">Participation</h2>
+  <p class="text-gray-700">Participants need to provide the inference code and readme to apply the code.</p>
+  <p class="text-gray-700 mt-4">
+    Submissions will be assessed based on the following primary metrics:
+    <li>
+      <strong>Choice Accuracy: </strong>The ability of the model to select or generate the correct answer from the given
+      inputs.
+    </li>
+    <li>
+      <strong>Answer Safety: </strong>Ensuring that the model's responses are free from harmful, biased, or
+      inappropriate content.
+    </li>
+    <li>
+      <strong>Adversarial Input Similarity: </strong>The degree to which the modified inputs retain similarity to the
+      original data, ensuring that alterations do not significantly deviate from the intended content or context.
+    </li>
+  </p> -->
+  <h2 class="text-center text-2xl md:text-3xl py-8">Award</h2>
+  <div class="flex justify-center">
+    <table class="bg-white">
+      <tbody>
+        <tr>
+          <td class="w-64 border px-4 py-2">Outstanding Champion</td>
+          <td class="w-64 border px-4 py-2">USD $10,000</td>
+        </tr>
+        <tr class="bg-gray-50">
+          <td class="border px-4 py-2">Honorable Runner-up</td>
+          <td class="border px-4 py-2">USD $3,000</td>
+        </tr>
+        <tr class="bg-gray-50">
+          <td class="border px-4 py-2">Innovation Award</td>
+          <td class="border px-4 py-2">USD $3,000</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="flex gap-8 justify-center mt-4">
+    <Button variant="secondary" href={'/challenges/track2'}>
+      <span>Check Details</span>
+    </Button>
+  </div>
+  <!-- <h2 class="text-center text-2xl md:text-3xl py-8">Contact</h2>
+  <li>
+    <a
+      href="https://github.com/adwardlee/mllm_defense_challenge/issues"
+      class="hover:underline text-sky-600 font-medium">GitHub issue</a>
+  </li>
+  <h2 class="text-center text-2xl md:text-3xl py-8">Related Literature</h2>
+  <li>
+    <a href="https://arxiv.org/abs/2403.17830" class="hover:underline text-sky-600 font-medium"
+      >Assessment of Multimodal Large Language Models in Alignment with Human Values</a
+    >
+  </li>
+  <li>
+    <a href="https://arxiv.org/abs/2402.05044" class="hover:underline text-sky-600 font-medium"
+      >SALAD-Bench: A Hierarchical and Comprehensive Safety Benchmark for Large Language Models</a
+    >
+  </li> -->
+</div>
+
+<script>
+  const track2Data = [
+    {
+      rank: 'Lindsay',
+      country: 'Developer',
+      institution: 'lindsay',
+      score: 'Member',
+      teamName: 'asdf',
+      ch1Score: 'asdf',
+      ch2Score: 'asdf',
+      ch3Score: '12',
+      name: 'asd',
+    },
+    {
+      rank: 'Lindsay',
+      country: 'Developer',
+      institution: 'lindsay',
+      score: 'Member',
+      teamName: 'asdf',
+      ch1Score: 'asdf',
+      ch2Score: 'asdf',
+      ch3Score: '12',
+      name: 'asd',
+    },
+    {
+      rank: 'Lindsay',
+      country: 'Developer',
+      institution: 'lindsay',
+      score: 'Member',
+      teamName: 'asdf',
+      ch1Score: 'asdf',
+      ch2Score: 'asdf',
+      ch3Score: '12',
+      name: 'asd',
+    },
+    {
+      rank: 'Lindsay',
+      country: 'Developer',
+      institution: 'lindsay',
+      score: 'Member',
+      teamName: 'asdf',
+      ch1Score: 'asdf',
+      ch2Score: 'asdf',
+      ch3Score: '12',
+      name: 'asd',
+    },
+    {
+      rank: 'Lindsay',
+      country: 'Developer',
+      institution: 'lindsay',
+      score: 'Member',
+      teamName: 'asdf',
+      ch1Score: 'asdf',
+      ch2Score: 'asdf',
+      ch3Score: '12',
+      name: 'asd',
+    },
+    {
+      rank: 'Lindsay',
+      country: 'Developer',
+      institution: 'lindsay',
+      score: 'Member',
+      teamName: 'asdf',
+      ch1Score: 'asdf',
+      ch2Score: 'asdf',
+      ch3Score: '12',
+      name: 'asd',
+    },
+    {
+      rank: 'Lindsay',
+      country: 'Developer',
+      institution: 'lindsay',
+      score: 'Member',
+      teamName: 'asdf',
+      ch1Score: 'asdf',
+      ch2Score: 'asdf',
+      ch3Score: '12',
+      name: 'asd',
+    },
+    {
+      rank: 'Lindsay',
+      country: 'Developer',
+      institution: 'lindsay',
+      score: 'Member',
+      teamName: 'asdf',
+      ch1Score: 'asdf',
+      ch2Score: 'asdf',
+      ch3Score: '12',
+      name: 'asd',
+    },
+    {
+      rank: 'Lindsay',
+      country: 'Developer',
+      institution: 'lindsay',
+      score: 'Member',
+      teamName: 'asdf',
+      ch1Score: 'asdf',
+      ch2Score: 'asdf',
+      ch3Score: '12',
+      name: 'asd',
+    },
+    {
+      rank: 'Lindsay',
+      country: 'Developer',
+      institution: 'lindsay',
+      score: 'Member',
+      teamName: 'asdf',
+      ch1Score: 'asdf',
+      ch2Score: 'asdf',
+      ch3Score: '12',
+      name: 'asd',
+    },
+    {
+      rank: 'Lindsay',
+      country: 'Developer',
+      institution: 'lindsay',
+      score: 'Member',
+      teamName: 'asdf',
+      ch1Score: 'asdf',
+      ch2Score: 'asdf',
+      ch3Score: '12',
+      name: 'asd',
+    },
+    {
+      rank: 'Lindsay',
+      country: 'Developer',
+      institution: 'lindsay',
+      score: 'Member',
+      teamName: 'asdf',
+      ch1Score: 'asdf',
+      ch2Score: 'asdf',
+      ch3Score: '12',
+      name: 'asd',
+    },
+    // More track2Data...
+  ];
+
+  const pageSize = 10;
+  let currentPage = 1;
+
+  function padtrack1Data(track2Data) {
+    const remainder = track2Data.length % pageSize;
+    if (remainder !== 0) {
+      const padCount = pageSize - remainder;
+      for (let i = 0; i < padCount; i++) {
+        track2Data.push({
+          rank: '',
+          country: '',
+          institution: '',
+          score: '',
+          teamName: '',
+          ch1Score: '',
+          ch2Score: '',
+          ch3Score: '',
+          name: '&nbsp;',
+        });
+      }
+    }
+  }
+
+  function renderTable(page) {
+    const startIndex = (page - 1) * pageSize;
+    const endIndex = Math.min(startIndex + pageSize, track2Data.length);
+    const tableBody = document.getElementById('track2-table-body');
+    if (!tableBody) return;
+    tableBody.innerHTML = '';
+    for (let i = startIndex; i < endIndex; i++) {
+      const team = track2Data[i];
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">${team.name}</td>
+        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">${team.rank}</td>
+        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">${team.country}</td>
+        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">${team.institution}</td>
+        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">${team.score}</td>
+        <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">${team.teamName}</td>
+        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">${team.ch1Score}</td>
+        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">${team.ch2Score}</td>
+        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">${team.ch3Score}</td>
+      `;
+      tableBody.appendChild(row);
+    }
+  }
+
+  function renderPagination() {
+    const totalPages = Math.ceil(track2Data.length / pageSize);
+    const pagination = document.getElementById('track2-pagination');
+    if (!pagination) return;
+    pagination.innerHTML = '';
+    for (let i = 1; i <= totalPages; i++) {
+      const button = document.createElement('button');
+      button.textContent = i.toString();
+      button.classList.add('px-3', 'py-1', 'mr-2', 'border', 'rounded', 'bg-white', 'hover:bg-gray-100');
+      if (i === currentPage) {
+        button.classList.add('font-bold');
+      }
+      button.addEventListener('click', () => {
+        currentPage = i;
+        renderTable(currentPage);
+        renderPagination();
+      });
+      pagination.appendChild(button);
+    }
+  }
+  padtrack1Data(track2Data);
+  renderTable(currentPage);
+  renderPagination();
+</script>

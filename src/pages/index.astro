@@ -1,0 +1,1370 @@
+---
+import Header from '~/components/widgets/Header.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Content from '~/components/widgets/Content.astro';
+// import Timeline from '~/components/ui/Timeline.astro';
+import { headerData } from '~/navigation';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Brands from '~/components/widgets/Brands.astro';
+// import Timezone from '~/components/widgets/Timezone.astro';
+import Layout from '~/layouts/PageLayout.astro';
+// import Testimonials from '~/components/widgets/Testimonials.astro';
+import Button from '~/components/ui/Button.astro';
+// import Sponsor from '~/components/widgets/Sponsor.astro';
+import Timezone from '~/components/widgets/Timezone.astro';
+const metadata = {
+  title: 'ICML TiFA Workshop',
+};
+---
+
+<Layout metadata={metadata}>
+  <Fragment slot="header">
+    <Header {...headerData} isSticky />
+  </Fragment>
+
+  <!-- Hero2 Widget ******************* -->
+
+  <Hero2
+    tagline="ICML 2024 Workshop"
+    actions={[
+      { variant: 'primary', text: 'ICML Workshop Page', href: 'https://icml.cc/virtual/2024/workshop/29951' },
+      {
+        variant: 'secondary',
+        text: 'Submission Site',
+        href: 'https://openreview.net/group?id=ICML.cc/2024/Workshop/TiFA',
+      },
+    ]}
+  >
+    <Fragment slot="title">Trustworthy Multi-modal Foundation Models and AI Agents (TiFA)</Fragment>
+
+    <Fragment slot="subtitle">
+      ICML 2024 @ Vienna, Austria, Jul 27 Sat
+      <br /><span class="text-slate-300">Straus 1</span>
+    </Fragment>
+
+    <Fragment slot="content">
+      <br />
+      <!-- <span class="text-white"
+        >The time for acceptance notification is delayed to Jun 19, 2024 EOD AoE</span
+      > -->
+    </Fragment>
+  </Hero2>
+
+  <!-- Content Widget **************** -->
+
+  <!-- <Content id="Overview">
+    <Fragment slot="title"> Overview </Fragment><Fragment slot="subtitle"
+      >Welcome to the ICML 2024 Workshop on Trustworthy in Multi-modal Foundation Models and AI Agents (TiFA)
+    </Fragment>
+    <Fragment slot="content"
+      ><div class="mb-4">
+        Multi-modal Foundation Models (MFMs) have witnessed significant advancements in various bench marks and
+        practical applications. They are proficient in a wide range of tasks, and capable of pro ducing varied
+        multimodal responses. Nowadays a couple of MFMs have been deployed as realistic applications (such as GPT-4 [18]
+        and Midjourney [25]). Meanwhile, a large variety of MFMs (like InternLM [24] and LLaVA [14]) are still under
+        further research. Furthermore, foundation models with their powerful reasoning capabilities have led to the
+        emergence of various AI Agents [19, 28]. These agents are often capable of understanding open-world
+        instructions, breaking down complex tasks, and taking steps to achieve their goals.
+      </div>
+      <div class="mb-4">
+        Advanced MFMs and AI Agents, equipped with diverse modalities and an increasing number of available affordances,
+        accelerate their potential impact on society. As these systems gain abili ties to alter societal dynamics
+        swiftly, understanding and preempting the vulnerabilities of such systems and their induced harms becomes
+        crucial. Trustworthiness in MLMs and AI Agents tran scends identifying vulnerabilities in models and emphasizes
+        the importance of proactive harm mit igation, safeguards, and the establishment of comprehensive safety
+        mechanisms throughout the lifecycle of system development and deployment. This approach demands a blend of
+        technical and socio-technical strategies, incorporating AI governance and regulatory insights to build
+        trustworthy MFMs and Agents.
+      </div>
+    </Fragment>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content> -->
+  <Content id="Schedule">
+    <Fragment slot="content">
+      <h3 class="text-3xl font-bold tracking-tight dark:text-white sm:text-4xl mb-2 text-center">
+        Schedule<br />
+      </h3>
+      <Timezone
+        items={[
+          {
+            time: '2024-07-27T09:30:00+02:00',
+            theme: {
+              title: 'Opening Remark',
+              // subtitles: ['LoremLoremLoremLorem', 'LoremLoremLoremLorem'],
+            },
+            Speaker: 'Jing Shao (Shanghai AI Lab)',
+            institution: 'Shanghai AI Lab',
+            logoSrc: 'schedule1.png',
+            link: '',
+            duration: '10',
+            title: 'Opening Remark',
+          },
+          {
+            time: '2024-07-27T09:40:00+02:00',
+            theme: {
+              title: 'Keynote Talk',
+            },
+            Speaker: 'Ludwig Schmit (University of Washington; Anthropic)',
+            title: 'A data-centric view on reliable generalization',
+            institution: '',
+            logoSrc: 'schedule2.png',
+            link: 'https://people.csail.mit.edu/ludwigs/',
+            duration: '30',
+          },
+          {
+            time: '2024-07-27T10:10:00+02:00',
+            theme: {
+              title: 'Keynote Talk',
+            },
+            Speaker: 'Matt Fredrikson (Carnegie Mellon University; Gray Swan AI)',
+            title: 'Robust Alignment and Control with Representation Engineering',
+            institution: '',
+            logoSrc: 'schedule3.png',
+            link: '',
+            duration: '30',
+          },
+          {
+            time: '2024-07-27T10:40:00+02:00',
+            theme: {
+              title: 'Coffee Break',
+            },
+            Speaker: '-',
+            institution: '',
+            logoSrc: '',
+            link: '',
+            duration: '10',
+          },
+          {
+            time: '2024-07-27T10:50:00+02:00',
+            theme: {
+              title: 'Panel Discussion',
+            },
+            Speaker:
+              'Panelists:\n- Alan Chan (Center for the Governance of AI; Mila - Quebec Al Institute)\n- Tomek Korbak (UK AI Safety Institute)\n- Ivan Evtimov (Meta AI)\n- Kai Greshake (NVIDIA)\n- Matt Fredrikson (Carnegie Mellon University; Gray Swan AI)\n\nModerator: Daniel Paleka (ETH Zurich)',
+            institution: '',
+            logoSrc: '',
+            link: '',
+            title: 'Theme: Security and Safety of AI Agents',
+            duration: '50',
+          },
+          {
+            time: '2024-07-27T11:40:00+02:00',
+            theme: {
+              title: 'Contributed Talk',
+            },
+            Speaker: 'Yisen Wang (Peking University)',
+            title: 'The Safety in Large Language Models',
+            institution: '',
+            logoSrc: 'schedule6.png',
+            link: '',
+            duration: '20',
+          },
+          {
+            time: '2024-07-27T12:00:00+02:00',
+            theme: {
+              title: 'Outstanding Paper Talk',
+            },
+            Speaker: 'Why Has Predicting Downstream Capabilities of Frontier AI Models with Scale Remained Elusive?',
+            institution: '',
+            logoSrc: '',
+            link: '',
+            duration: '10',
+          },
+          {
+            time: '2024-07-27T12:10:00+02:00',
+            theme: {
+              title: 'Outstanding Paper Talk',
+            },
+            Speaker:
+              'Towards Adversarially Robust Vision-Language Models: Insights from Design Choices and Prompt Formatting Techniques',
+            institution: '',
+            logoSrc: '',
+            link: '',
+            duration: '10',
+          },
+          {
+            time: '2024-07-27T12:20:00+02:00',
+            theme: {
+              title: 'Lunch Break',
+            },
+            Speaker: '-',
+            institution: '',
+            logoSrc: '',
+            link: '',
+            duration: '70',
+          },
+          {
+            time: '2024-07-27T13:30:00+02:00',
+            theme: {
+              title: 'Keynote Talk',
+            },
+            Speaker: ' Alan Chan (Center for the Governance of AI; Mila - Quebec Al Institute)',
+            title: 'Agent Governance',
+            institution: '',
+            logoSrc: 'schedule4.png',
+            link: '',
+            duration: '30',
+          },
+          {
+            time: '2024-07-27T14:00:00+02:00',
+            theme: {
+              title: 'Keynote Talk',
+            },
+            Speaker: 'Herbie Bradley (UK AI Safety Institute)',
+            title: 'UK AI Safety Institute: Overview & Agents Evals',
+            institution: '',
+            logoSrc: 'schedule5.png',
+            link: '',
+            duration: '30',
+          },
+          {
+            time: '2024-07-27T14:30:00+02:00',
+            theme: {
+              title: 'Contributed Talk',
+            },
+            title: 'Summary and Prospect of TiFA Challenge',
+            Speaker: 'Lijun Li (Shanghai AI Lab) & Bowen Dong (Shanghai AI Lab)',
+            institution: '',
+            logoSrc: 'schedule1.png',
+            link: '',
+            duration: '20',
+          },
+          {
+            time: '2024-07-27T14:50:00+02:00',
+            theme: {
+              title: 'Break',
+            },
+            Speaker: '-',
+            institution: '',
+            logoSrc: '',
+            link: '',
+            duration: '20',
+          },
+          {
+            time: '2024-07-27T15:10:00+02:00',
+            theme: {
+              title: 'Paper Lightning Talks',
+            },
+            Speaker:
+              'Games for AI-Control: Models of Safety-Evaluations of AI Deployment Protocols (Outstanding paper; remote)\nDecomposed evaluations of geographic disparities in text-to-image models (Outstanding paper; remote)\n---\nWebCanvas: Benchmarking Web Agents in Online Environments (Dehan Kong)\nCan Editing LLMs Inject Harm? (Shiyang Lai)\nMaPPing Your Model: Assessing the Impact of Adversarial Attacks on LLM-based Programming Assistants (John Heibel)\nModels That Prove Their Own Correctness (Orr Paradise)\nBias Begets Bias: the Impact of Biased Embeddings on Diffusion Models (Marvin Li & Jeffrey Wang)',
+            institution: '',
+            logoSrc: '',
+            link: '',
+            duration: '40',
+          },
+          {
+            time: '2024-07-27T15:50:00+02:00',
+            theme: {
+              title: 'Poster Session + Social',
+            },
+            Speaker: '-',
+            institution: '',
+            logoSrc: '',
+            link: '',
+            duration: '60',
+          },
+          {
+            time: '2024-07-27T16:50:00+02:00',
+            theme: {
+              title: 'End of Program',
+            },
+            Speaker: '-',
+            institution: '',
+            logoSrc: '',
+            link: '',
+            duration: '0',
+          },
+        ]}
+      />
+    </Fragment>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Content id="Call-For-Papers">
+    <Fragment slot="title">Description/Call for Papers</Fragment>
+    <Fragment slot="content"
+      ><div class="mb-4">
+        Advanced Multi-modal Foundation Models (MFMs) and AI Agents, equipped with diverse modalities [1, 2, 3, 4, 15]
+        and an increasing number of available affordances [5, 6] (e.g., tool use, code interpreter, API access, etc.),
+        have the potential to accelerate and amplify their predecessors’ impact on society [7].
+      </div>
+      <div class="mb-4">
+        MFM includes multi-modal large language models (MLLMs) and multi-modal generative models (MMGMs). <a
+          href="https://arxiv.org/abs/2306.13549"
+          class="hover:underline text-sky-600 font-medium"
+          target="_blank">MLLMs</a
+        > refer to LLM-based models with the ability to receive, reason, and output with information of multiple modalities,
+        including but not limited to text, images, audio, and video. Examples include Llava [1], Reka [8], QwenVL [9], <a
+          href="https://openlamm.github.io/"
+          class="hover:underline text-sky-600 font-medium"
+          target="_blank">LAMM</a
+        > [36],and so on. MMGMs refer to a class of MFM models that can generate new content across multiple modalities,
+        such as generating images from text descriptions or creating videos from audio and text inputs. Examples include
+        Stable Diffusion [2], Sora [10], and Latte [11]. AI agents, <a
+          href="https://cdn.openai.com/papers/practices-for-governing-agentic-ai-systems.pdf"
+          class="hover:underline text-sky-600 font-medium"
+          target="_blank">or systems with higher degree of agenticness</a
+        >, refer to systems that could achieve complex goals in complex environments with limited direct supervision
+        [12]. Understanding and preempting the vulnerabilities of these systems [13, 35] and their induced harms [14]
+        becomes unprecedentedly crucial.
+      </div>
+      <div class="mb-4">
+        Building trustworthy MFMs and AI Agents transcends adversarial robustness of such models, but also emphasizes
+        the importance of proactive risk assessment, mitigation, safeguards, and the establishment of comprehensive
+        safety mechanisms throughout the lifecycle of the systems’ development and deployment [16, 17]. This approach
+        demands a blend of technical and socio-technical strategies, incorporating AI governance and regulatory insights
+        to build trustworthy MFMs and AI Agents.
+      </div>
+      <div class="mb-4">Topics include but are not limited to:</div>
+      <ul class="list-outside list-disc">
+        <li>Adversarial attack and defense, poisoning, hijacking and security [18, 13, 19, 20, 21]</li>
+        <li>Robustness to spurious correlations and uncertainty estimation</li>
+        <li>Technical approaches to privacy, fairness, accountability and regulation [12, 22, 28]</li>
+        <li>Truthfulness, factuality, honesty and sycophancy [23, 24]</li>
+        <li>Transparency, interpretability and monitoring [25, 26]</li>
+        <li>Identifiers of AI-generated material, such as watermarking [27]</li>
+        <li>
+          <a
+            href="https://www.aisafetybook.com/textbook/3-4"
+            class="hover:underline text-sky-600 font-medium"
+            target="_blank">Technical alignment / control</a
+          > , such as scalable overslight [29], representation control [26] and machine unlearning [30]
+        </li>
+        <li>Model auditing, red-teaming and safety evaluation benchmarks [31, 32, 33, 16]</li>
+        <li>Measures against malicious model fine-tuning [34]</li>
+        <li>Novel safety challenges with the introduction of new modalities</li>
+      </ul>
+    </Fragment>
+  </Content>
+
+  <Content id="Submission-Guide" classes={{ container: 'pb-2 md:pb-2 lg:pb-2' }}>
+    <Fragment slot="title">Submission Guide</Fragment>
+    <Fragment slot="subtitle">Submission Instructions</Fragment>
+    <Fragment slot="content" classes={{ container: 'py-2' }}
+      ><ul class="list-outside list-disc">
+        <li>
+          <span class="font-bold">Submission site:</span>
+          Submissions should be made on <a
+            href="https://openreview.net/group?id=ICML.cc/2024/Workshop/TiFA"
+            class="hover:underline text-sky-600 font-medium"
+            target="_blank">OpenReview</a
+          >.
+        </li>
+        <li>
+          <span class="font-bold">Submission are non-archival:</span>
+          we receive submissions that are also undergoing peer review elsewhere at the time of submission, but we will not
+          accept submissions that have already been previously published or accepted for publication at peer-reviewed conferences
+          or journals. Submission is permitted for papers presented or to be presented at other non-archival venues (e.g.
+          other workshops). No formal workshop proceedings will be published.
+        </li>
+        <li>
+          <span class="font-bold">Social Impact Statement: </span>
+          authors are required to include a "Social Impact Statement" that highlights "potential broader impact of their
+          work, including its ethical aspects and future societal consequences".
+        </li>
+        <li>
+          <span class="font-bold">Submission Length and Format: </span>
+          Submissions should be anonymised papers up to 5 pages (appendices can be added to the main PDF); excluding references
+          and Social Impacts Statement. You must format your submission using the <a
+            href="https://media.icml.cc/Conferences/ICML2024/Styles/icml2024.zip"
+            class="hover:underline text-sky-600 font-medium"
+            target="_blank">ICML_2024_LaTeX_style_file</a
+          >.
+        </li>
+        <li>
+          <span class="font-bold">Paper Review: </span>
+          All reviews are double-blinded, with at least two reviewers assigned to each paper.
+        </li>
+        <li>
+          <span class="font-bold">Camera Ready Instructions: </span>
+          The camera ready version is composed of a main body, which can be up to <span class="font-bold"
+            >6 pages long</span
+          >, followed by unlimited pages for a Social Impact Statement, references and an appendix, all in a single
+          file. The camera-ready versions of all accepted submissions should be uploaded by the authors to the <a
+            href="https://openreview.net/group?id=ICML.cc/2024/Workshop/TiFA"
+            class="hover:underline text-sky-600 font-medium"
+            target="_blank">OpenReview page</a
+          > for corresponding submissions. The camera ready version will be publicly available to everyone on the Camera-Ready
+          Deadline displayed below.
+        </li>
+      </ul>
+    </Fragment>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+  <Content classes={{ container: 'py-2 md:py-2 lg:py-2 pb-12 md:pb-12 lg:pb-12' }}>
+    <Fragment slot="subtitle">Key Dates</Fragment>
+    <Fragment slot="content" classes={{ container: 'p-0' }}>
+      <!-- <Timeline
+        items={[
+          { title: 'May 06, 2024', description: 'Submissions Open' },
+          { title: 'May 23, 2024', description: 'Submission Deadline' },
+          { title: 'June 12, 2024', description: 'Acceptance Notification' },
+          { title: 'June 30, 2024', description: 'Camera-Ready Deadline' },
+          { title: 'July 26, 2024', description: 'Workshop Date' },
+        ]}
+        defaultIcon="tabler:arrow-right"
+      /> -->
+      <div class="flex justify-center">
+        <table class="bg-white">
+          <tbody>
+            <tr>
+              <td class="w-64 border px-4 py-2">Submissions Open</td>
+              <td class="w-64 border px-4 py-2">May 11, 2024</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="border px-4 py-2">Submission Deadline</td>
+              <td class="border px-4 py-2">May 30, 2024</td>
+            </tr>
+            <tr>
+              <td class="border px-4 py-2">Acceptance Notification</td>
+              <td class="border px-4 py-2"
+                ><span style="text-decoration:line-through">June 17, 2024</span>June 19, 2024</td
+              >
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="border px-4 py-2">Camera-Ready Deadline</td>
+              <td class="border px-4 py-2">July 7, 2024</td>
+            </tr>
+            <tr>
+              <td class="border px-4 py-2">Workshop Date</td>
+              <td class="border px-4 py-2">July 27, 2024</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="flex py-4">
+        All deadlines are specified in 23:59<a
+          href="https://www.timeanddate.com/time/zones/aoe"
+          class="hover:underline text-sky-600 font-medium px-2"
+          target="_blank">AoE</a
+        > (Anywhere on Earth).
+      </div>
+    </Fragment>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+  <!-- Content Widget **************** -->
+
+  <!-- <Content id="Schedule">
+    <Fragment slot="content">
+      <h3 class="text-3xl font-bold tracking-tight dark:text-white sm:text-4xl mb-2 text-center">
+        Schedule<br />
+      </h3>
+      <Timezone
+        items={[
+          {
+            time: '2024-05-15T08:50:00',
+            theme: {
+              title: 'Opening Remarks (10 min)',
+            },
+            Speaker: '',
+            institution: '',
+            logoSrc: '/avatar.png',
+            link: '#',
+          },
+          {
+            time: '2024-05-15T09:00:00',
+            theme: {
+              title: 'Invited talk 1: Roger Grosse (30 min)',
+            },
+            Speaker: 'Roger Grosse',
+            institution: '',
+            logoSrc: '/avatar.png',
+            link: '',
+          },
+          {
+            time: '2024-05-15T09:30:00',
+            theme: {
+              title: 'Invited talk 2: Matthias Hein (30 min)',
+            },
+            Speaker: 'Matthias Hein',
+            institution: '',
+            logoSrc: '/avatar.png',
+            link: '',
+          },
+          {
+            time: '2024-05-15T10:00:00',
+            theme: {
+              title: 'Contributed Opinion Talk 1 (30 min)',
+            },
+            Speaker: '',
+            institution: '',
+            logoSrc: '/avatar.png',
+            link: '',
+          },
+          {
+            time: '2024-05-15T10:30:00',
+            theme: {
+              title: 'Break (15 min)',
+            },
+            Speaker: '',
+            institution: '',
+            logoSrc: '/avatar.png',
+            link: '',
+          },
+          {
+            time: '2024-05-15T10:45:00',
+            theme: {
+              title: 'Best Paper Talk 1 (15 min)',
+            },
+            Speaker: '',
+            institution: '',
+            logoSrc: '/avatar.png',
+            link: '',
+          },
+          {
+            time: '2024-05-15T11:00:00',
+            theme: {
+              title: 'Best Paper Talk 2 (15 min)',
+            },
+            Speaker: '',
+            institution: '',
+            logoSrc: '/avatar.png',
+            link: '',
+          },
+          {
+            time: '2024-05-15T11:15:00',
+            theme: {
+              title: 'Poster session & Lunch (110 min)',
+            },
+            Speaker: '',
+            institution: '',
+            logoSrc: '/avatar.png',
+            link: '',
+          },
+          {
+            time: '2024-05-15T13:05:00',
+            theme: {
+              title: 'Invited talk 3(30 min)',
+            },
+            Speaker: 'Been Kim',
+            institution: '',
+            logoSrc: '/avatar.png',
+            link: '',
+          },
+          {
+            time: '2024-05-15T13:35:00',
+            theme: {
+              title: 'Invited talk 4(30 min)',
+            },
+            Speaker: 'Ludwig Schmidt',
+            institution: '',
+            logoSrc: '/avatar.png',
+            link: '',
+          },
+          {
+            time: '2024-05-15T14:05:00',
+            theme: {
+              title: 'Contributed Opinion Talk 2(30 min)',
+            },
+            Speaker: '',
+            institution: '',
+            logoSrc: '/avatar.png',
+            link: '',
+          },
+          {
+            time: '2024-05-15T14:35:00',
+            theme: {
+              title: 'Invited talk 5(30 min)',
+            },
+            Speaker: 'Florian Tram‘er',
+            institution: '',
+            logoSrc: '/avatar.png',
+            link: '',
+          },
+          {
+            time: '2024-05-15T15:05:00',
+            theme: {
+              title: 'Break (15 min)',
+            },
+            Speaker: '',
+            institution: '',
+            logoSrc: '/avatar.png',
+            link: '',
+          },
+          {
+            time: '2024-05-15T15:20:00',
+            theme: {
+              title: 'Invited talk 6(30 min)',
+            },
+            Speaker: 'Ivan Evtimov',
+            institution: '',
+            logoSrc: '/avatar.png',
+            link: '',
+          },
+          {
+            time: '2024-05-15T15:50:00',
+            theme: {
+              title: 'Panel (60 min)',
+            },
+            Speaker: '',
+            institution: '',
+            logoSrc: '/avatar.png',
+            link: '',
+          },
+          {
+            time: '2024-05-15T16:50:00',
+            theme: {
+              title: 'Breakout rooms discussion (30 min)',
+            },
+            Speaker: '',
+            institution: '',
+            logoSrc: '/avatar.png',
+            link: '',
+          },
+          {
+            time: '2024-05-15T17:20:00',
+            theme: {
+              title: 'Closing remarks (10 min)',
+            },
+            Speaker: '',
+            institution: '',
+            logoSrc: '/avatar.png',
+            link: '',
+          },
+        ]}
+      />
+    </Fragment>
+  </Content> -->
+
+  <!-- Brands Widget ****************** -->
+
+  <!-- <Brands
+    id="Speakers"
+    title="Speakers"
+    images={[
+      {
+        src: '/speaker01.png',
+        alt: 'speaker01',
+        name: 'Roger Grosse',
+        university: 'University of Toronto',
+        bioLink: 'https://www.cs.toronto.edu/~rgrosse/',
+      },
+      {
+        src: '/speaker02.png',
+        alt: 'speaker02',
+        name: 'Been Kim',
+        university: 'Google DeepMind',
+        bioLink: 'https://beenkim.github.io/',
+      },
+      {
+        src: '/speaker03.png',
+        alt: 'speaker03',
+        name: 'Florian Tramèr',
+        university: 'ETH Zürich',
+        bioLink: 'https://www.floriantramer.com/',
+      },
+      {
+        src: '/speaker04.png',
+        alt: 'speaker04',
+        name: 'Ludwig Schmidt',
+        university: 'University of Washington',
+        bioLink: 'https://people.csail.mit.edu/ludwigs/',
+      },
+      {
+        src: '/speaker05.png',
+        alt: 'speaker05',
+        name: 'Matthias Hein',
+        university: 'University of Tübingen',
+        bioLink: 'http://bit.ly/3UAht4W',
+      },
+      {
+        src: '/speaker06.png',
+        alt: 'speaker06',
+        name: 'Ivan Evtimov',
+        university: 'Meta',
+        bioLink: 'https://ivanevtimov.eu/',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment></Brands
+  > -->
+  <!-- Content Widget **************** -->
+  <!-- 
+  <Content id="Challenges" title="Challenges">
+    <Fragment slot="content"
+      ><Testimonials
+        classes={{ container: 'py-0 md:py-0 lg:py-0 ' }}
+        testimonials={[
+          {
+            title: 'Track 1',
+            name: 'Attack Challenge',
+            image: {
+              src: '/track1.png',
+              alt: 'Track 1',
+            },
+            link: '#TRACK1',
+            job: 'Multimodal large language models, specifically large language models that can accept images (single image/multiple images) and can do visual question and answer tasks, then if the input image or input text contains some inducing or harmful properties content, it is possible for large multi-modal models to answer harmful content. In addition, if some perturbations are added to images or texts, it may cause the performance of large multi-modal models to decline in various visual tasks. This requires us to study what impact different input perturbations or some attack methods on image text will have on multi-modal large models, especially on trustworthiness, and how to defend against these possible impacts.',
+          },
+          {
+            title: 'Track 2',
+            name: 'Defense Challenge',
+            image: {
+              src: '/track2.png',
+              alt: 'Track 2',
+            },
+            link: '#TRACK2',
+            job: 'Multimodal large language models, specifically large language models that can accept images (single image/multiple images) and can do visual question and answer tasks. When input images or texts contain malicious content or are subtly altered through perturbations, MLLMs can generate harmful responses or suffer from degraded performance across various visual tasks. This vulnerability poses a critical challenge to the trustworthiness and safety of MLLMs, necessitating robust defense mechanisms.The primary objective of this challenge is to develop innovative strategies and techniques to protect MLLMs against adversarial attacks that exploit their multimodal capabilities.',
+          },
+          {
+            title: 'Track 3',
+            name: 'Agent Trustworthy Challenge',
+            image: {
+              src: '/track3.png',
+              alt: 'Track 3',
+            },
+            link: '#TRACK3',
+            job: "The evolution of Artificial Intelligence (AI) reflects its increasing capability and integration into our daily lives, from basic automated tools to sophisticated, autonomous systems. Initially, AI systems were simple agents performing goal-directed actions without specific human commands. Over time, these evolved into Large Language Models (LLMs) like GPT-4, which not only execute complex tasks but also enhance decision-making through advanced language understanding and generation capabilities. The most advanced tier of AI development includes ethically aligned, trustworthy agents. These agents are designed to operate reliably within ethical and safety frameworks, illustrating both the benefits and the essential need to manage the risks associated with AI's integration into society. This tiered framework—from basic agents, through linguistically skilled LLMs, to ethically guided trustworthy agents—underscores the progression and potential of AI in enhancing human capabilities and addressing complex challenges.",
+          },
+        ]}
+        callToAction={{
+          text: 'See More',
+          href: '/challenges',
+        }}
+      /></Fragment
+    >
+  </Content> -->
+  <!-- Brands Widget ****************** -->
+
+  <Brands
+    id="Organizers"
+    title="Organizing Committee"
+    icons={[]}
+    images={[
+      {
+        src: '/organizer01.png',
+        alt: 'organizer01',
+        name: 'Zhenfei Yin',
+        university: 'USYD',
+        bioLink: 'https://scholar.google.com.hk/citations?user=ngPR1dIAAAAJ&hl=zh-CN',
+      },
+      {
+        src: '/organizer02.png',
+        alt: 'organizer02',
+        name: 'Yawen Duan',
+        university: 'Concordia AI',
+        bioLink: 'https://scholar.google.com/citations?user=IJQlPvYAAAAJ&hl=en',
+      },
+      {
+        src: '/organizer11.jpg',
+        alt: 'organizer11',
+        name: 'Lijun Li',
+        university: 'Shanghai AI Lab',
+        bioLink: 'https://scholar.google.com/citations?user=394j5K4AAAAJ&hl=zh-CN',
+      },
+      {
+        src: '/organizer05.png',
+        alt: 'organizer05',
+        name: 'Jianfeng Chi',
+        university: 'Meta AI',
+        bioLink: 'https://jfchi.github.io/',
+      },
+
+      {
+        src: '/organizer11.png',
+        alt: 'organizer11',
+        name: 'Yichi Zhang',
+        university: 'Tsinghua University',
+        bioLink: 'https://zycheiheihei.github.io/',
+      },
+      {
+        src: '/organizer12.png',
+        alt: 'organizer12',
+        name: 'Bowen Dong',
+        university: 'HK PolyU',
+        bioLink: 'https://m1saka.moe/resume/',
+      },
+      {
+        src: '/organizer07.png',
+        alt: 'organizer07',
+        name: 'Pavel Izmailov',
+        university: 'Anthropic',
+        bioLink: 'https://izmailovpavel.github.io/',
+      },
+      {
+        src: '/organizer03.png',
+        alt: 'organizer03',
+        name: 'Bo Li',
+        university: 'UIUC',
+        bioLink: 'https://aisecure.github.io/',
+      },
+      {
+        src: '/organizer09.png',
+        alt: 'organizer09',
+        name: 'Andy Zou',
+        university: 'CMU',
+        bioLink: 'https://andyzoujm.github.io/',
+      },
+      {
+        src: '/organizer10.png',
+        alt: 'organizer10',
+        name: 'Yaodong Yang',
+        university: 'Peking University',
+        bioLink: 'https://www.yangyaodong.com/',
+      },
+      {
+        src: '/organizer04.png',
+        alt: 'organizer04',
+        name: 'Hang Su',
+        university: 'Tsinghua University',
+        bioLink: 'https://www.suhangss.me/',
+      },
+    ]}
+    ><Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment></Brands
+  >
+
+  <Brands
+    id="Speakers & Panelists"
+    title="Speakers & Panelists"
+    icons={[]}
+    images={[
+      {
+        src: '/speaker07.png',
+        alt: 'speaker07',
+        name: 'Ludwig Schmidt',
+        university: 'University of Washington',
+        bioLink: 'https://people.csail.mit.edu/ludwigs/',
+      },
+      {
+        src: '/speaker08.png',
+        alt: 'speaker08',
+        name: 'Matt Fredrikson',
+        university: 'Carnegie Mellon University',
+        bioLink: 'https://mattfredrikson.com/',
+      },
+      {
+        src: '/speaker09.png',
+        alt: 'speaker09',
+        name: 'Alan Chan',
+        university: 'Center for the Governance of AI; Mila - Quebec Al Institute',
+        bioLink: 'https://www.achan.ca/',
+      },
+      {
+        src: '/speaker10.png',
+        alt: 'speaker10',
+        name: 'Herbie Bradley',
+        university: 'UK AI Safety Institute',
+        bioLink: 'https://herbiebradley.com/',
+      },
+      {
+        src: '/speaker11.png',
+        alt: 'speaker11',
+        name: 'Ivan Evtimov',
+        university: 'Meta AI',
+        bioLink: 'https://ivanevtimov.eu/',
+      },
+      {
+        src: '/speaker12.png',
+        alt: 'speaker12',
+        name: 'Kai Greshake',
+        university: 'NVIDIA',
+        bioLink: 'https://kai-greshake.de/',
+      },
+      {
+        src: '/speaker13.png',
+        alt: 'speaker13',
+        name: 'Yisen Wang',
+        university: 'Peking University',
+        bioLink: 'https://yisenwang.github.io/',
+      },
+      {
+        src: '/organizer11.jpg',
+        alt: '',
+        name: 'Lijun Li',
+        university: 'Shanghai AI Lab',
+        bioLink: 'https://scholar.google.com/citations?user=394j5K4AAAAJ&hl=zh-CN',
+      },
+      {
+        src: '/organizer12.png',
+        alt: 'organizer12',
+        name: 'Bowen Dong',
+        university: 'HK PolyU',
+        bioLink: 'https://m1saka.moe/resume/',
+      },
+      {
+        src: '/speaker14.png',
+        alt: 'speaker14',
+        name: 'Tomek Korbak',
+        university: 'UK AI Safety Institute',
+        bioLink: 'https://tomekkorbak.com/',
+      },
+    ]}
+  />
+  <Brands
+    id="Challenge-Organizer"
+    title="Challenge Organizer"
+    icons={[]}
+    images={[
+      {
+        src: '/organizer11.jpg',
+        alt: '',
+        name: 'Lijun Li',
+        university: 'Shanghai AI Lab',
+        bioLink: 'https://scholar.google.com/citations?user=394j5K4AAAAJ&hl=zh-CN',
+      },
+      {
+        src: '/organizer12.png',
+        alt: 'organizer12',
+        name: 'Bowen Dong',
+        university: 'HK PolyU',
+        bioLink: 'https://m1saka.moe/resume/',
+      },
+      {
+        src: '/organizer14.png',
+        alt: 'organizer14',
+        name: 'Enshen Zhou',
+        university: 'BUAA',
+        bioLink: 'https://scholar.google.com/citations?user=8Wd7-NAAAAAJ&hl=en',
+      },
+      {
+        src: '/organizer13.png',
+        alt: 'organizer13',
+        name: 'Zhelun Shi',
+        university: 'BUAA',
+        bioLink: 'https://scholar.google.com/citations?user=EDLcoVkAAAAJ&hl=zh-CN',
+      },
+      {
+        src: '/organizer16.png',
+        alt: 'organizer16',
+        name: 'Dongrui Liu',
+        university: 'Shanghai AI Lab',
+        bioLink: 'https://shenqildr.github.io/',
+      },
+      {
+        src: '/organizer15.png',
+        alt: 'organizer15',
+        name: 'Hao Li',
+        university: 'BUAA',
+        bioLink: 'https://scholar.google.com/citations?user=iZcvrH8AAAAJ',
+      },
+    ]}
+  />
+
+  <!-- Brands Widget ****************** -->
+  <Brands
+    id="Steering-Committee"
+    title="Steering Committee"
+    icons={[]}
+    images={[
+      {
+        src: '/committee01.jpg',
+        alt: 'committee01',
+        name: 'Jing Shao',
+        university: 'Shanghai AI Lab',
+        bioLink: 'https://amandajshao.github.io/',
+      },
+      {
+        src: '/committee03.png',
+        alt: 'committee03',
+        name: 'Jun Zhu',
+        university: 'Tsinghua University',
+        bioLink: 'https://ml.cs.tsinghua.edu.cn/~jun/index.shtml',
+      },
+      {
+        src: '/committee04.png',
+        alt: 'committee04',
+        name: 'Xuanjing Huang',
+        university: 'Fudan University',
+        bioLink: 'https://xuanjing-huang.github.io/',
+      },
+      {
+        src: '/committee06.png',
+        alt: 'committee06',
+        name: 'Wanli Ouyang',
+        university: 'Shanghai AI Lab',
+        bioLink: 'https://wlouyang.github.io/',
+      },
+      {
+        src: '/committee02.png',
+        alt: 'committee02',
+        name: 'Yu Qiao',
+        university: 'Shanghai AI Lab',
+        bioLink: 'https://mmlab.siat.ac.cn/yuqiao',
+      },
+      {
+        src: '/committee07.png',
+        alt: 'committee07',
+        name: 'Dacheng Tao',
+        university: 'NTU',
+        bioLink: 'https://ieeexplore.ieee.org/author/37269935500',
+      },
+      {
+        src: '/committee08.png',
+        alt: 'committee08',
+        name: 'Philip H.S. Torr',
+        university: 'University of Oxford',
+        bioLink: 'https://www.robots.ox.ac.uk/~phst/',
+      },
+    ]}
+  />
+
+  <Content id="Program-Committee">
+    <Fragment slot="title"> Program Committee </Fragment>
+    <Fragment slot="content">
+      <div class="max-w-6xl flex flex-wrap mx-auto">
+        <div class="pc-item">Tianhao Shen</div>
+        <div class="pc-item">Nora Belrose</div>
+        <div class="pc-item">Chunhui Zhang</div>
+        <div class="pc-item">Rudolf Laine</div>
+        <div class="pc-item">Apoorva Nitsure</div>
+        <div class="pc-item">Ollie Liu</div>
+        <div class="pc-item">Herbie Bradley</div>
+        <div class="pc-item">Kuofeng Gao</div>
+        <div class="pc-item">Nevan Wichers</div>
+        <div class="pc-item">Fengqing Jiang</div>
+        <div class="pc-item">Serah Sessi Akojenu</div>
+        <div class="pc-item">Sandy Tanwisuth</div>
+      </div>
+      <div
+        id="pcContent"
+        class="overflow-hidden max-h-0 transition-max-height duration-700 ease-in-out max-w-6xl flex flex-wrap mx-auto"
+      >
+        <div class="pc-item">Canyu Chen</div>
+        <div class="pc-item">Peiyan Zhang</div>
+        <div class="pc-item">Zijing Shi</div>
+        <div class="pc-item">Guozheng Ma</div>
+        <div class="pc-item">Zhongyu Ouyang</div>
+        <div class="pc-item">Xi Li</div>
+        <div class="pc-item">Jane Pan</div>
+        <div class="pc-item">Alexis Roger</div>
+        <div class="pc-item">Anisa Halimi</div>
+        <div class="pc-item">Qi She</div>
+        <div class="pc-item">Cindy Wu</div>
+        <div class="pc-item">Toyib Ogunremi</div>
+        <div class="pc-item">Max Kaufmann</div>
+        <div class="pc-item">Brooklyn Sheppard</div>
+        <div class="pc-item">Yuchen Zhang</div>
+        <div class="pc-item">Boyuan Chen</div>
+        <div class="pc-item">Xinyu Yang</div>
+        <div class="pc-item">Benjamin Bucknall</div>
+        <div class="pc-item">Oliver Jaffe</div>
+        <div class="pc-item">Samuel E Kwok</div>
+        <div class="pc-item">Yawen Zhang</div>
+        <div class="pc-item">Javier Rando</div>
+        <div class="pc-item">Kevin Wei</div>
+        <div class="pc-item">Shiqi Chen</div>
+        <div class="pc-item">Aengus Lynch</div>
+        <div class="pc-item">Edem Wornyo</div>
+        <div class="pc-item">Muhammad Ali</div>
+        <div class="pc-item">Zonghao Ying</div>
+        <div class="pc-item">Xiao Li</div>
+        <div class="pc-item">Tom Sühr</div>
+        <div class="pc-item">Messi H.J. Lee</div>
+        <div class="pc-item">Dongping Chen</div>
+        <div class="pc-item">Chulin Xie</div>
+        <div class="pc-item">Robert Wu</div>
+        <div class="pc-item">Alex Goldie</div>
+        <div class="pc-item">Jerry Huang</div>
+        <div class="pc-item">Dongyoung Go</div>
+        <div class="pc-item">Xiaoyuan Guo</div>
+        <div class="pc-item">Zekun Wu</div>
+        <div class="pc-item">Jiayi Kelsey Wang</div>
+        <div class="pc-item">Zeming Wei</div>
+        <div class="pc-item">Kunlin Cai</div>
+        <div class="pc-item">Shaina Raza</div>
+        <div class="pc-item">Jiaying Lu</div>
+        <div class="pc-item">Melissa Hall</div>
+        <div class="pc-item">Zhiqiu Jiang</div>
+        <div class="pc-item">Abigail Goldsteen</div>
+        <div class="pc-item">Pengwei Li</div>
+        <div class="pc-item">Tanya Akumu</div>
+        <div class="pc-item">Diji Yang</div>
+        <div class="pc-item">Roy Siegelmann</div>
+        <div class="pc-item">Xianjun Yang</div>
+        <div class="pc-item">Ole Kristian Jorgensen</div>
+        <div class="pc-item">Adit Magotra</div>
+        <div class="pc-item">Khaoula Chehbouni</div>
+        <div class="pc-item">Aidan O'Gara</div>
+        <div class="pc-item">Hao Yu</div>
+        <div class="pc-item">Yibo Wang</div>
+        <div class="pc-item">Jiaxin Zhang</div>
+        <div class="pc-item">Jinmeng Rao</div>
+        <div class="pc-item">Jianfeng Chi</div>
+        <div class="pc-item">Kyle A. Kilian</div>
+        <div class="pc-item">Haoyu Wang</div>
+        <div class="pc-item">Jinghuai Zhang</div>
+        <div class="pc-item">Aileen Nielsen</div>
+        <div class="pc-item">David Reber</div>
+        <div class="pc-item">Wendi Cui</div>
+        <div class="pc-item">Euan Ong</div>
+        <div class="pc-item">Lennart Heim</div>
+        <div class="pc-item">Carson Ezell</div>
+        <div class="pc-item">Hugo Laurence Fry</div>
+        <div class="pc-item">Peng Cui</div>
+      </div>
+      <div class="flex justify-center mt-8"><Button id="pcExpandButton" class="cursor-pointer"> Expand </Button></div>
+      <style>
+        .pc-item {
+          width: 25%;
+          box-sizing: border-box;
+          text-align: center;
+          margin-bottom: 0.4rem;
+          margin-top: 0.4rem;
+        }
+      </style>
+      <script>
+        const pcButton = document.getElementById('pcExpandButton');
+        const pcContent = document.getElementById('pcContent');
+        let isPcOpen = false;
+        if (pcButton && pcContent) {
+          pcButton.addEventListener('click', () => {
+            if (!isPcOpen) {
+              pcContent.style.maxHeight = pcContent.scrollHeight + 'px';
+              pcButton.textContent = 'Collapse';
+              isPcOpen = true;
+            } else {
+              pcContent.style.maxHeight = '';
+              pcButton.textContent = 'Expand';
+              isPcOpen = false;
+            }
+          });
+        }
+      </script>
+    </Fragment>
+  </Content>
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="Frequently Asked Questions"
+    items={[
+      {
+        title: 'Can we submit a paper that will also be submitted to NeurIPS 2024?',
+        description: 'Yes.',
+        icon: 'tabler:help-octagon',
+      },
+      {
+        title: 'Can we submit a paper that was accepted at ICLR 2024?',
+        description: 'No. ICML prohibits main conference publication from appearing concurrently at the workshops.',
+        icon: 'tabler:help-octagon',
+      },
+      {
+        title: 'Will the reviews be made available to authors?',
+        description: 'Yes.',
+        icon: 'tabler:help-octagon',
+      },
+      {
+        title: 'I have a question not addressed here, whom should I contact?',
+        description: 'Email organizers at icmltifaworkshop@gmail.com',
+        icon: 'tabler:help-octagon',
+      },
+    ]}
+    ><Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment></FAQs
+  >
+
+  <Content id="References">
+    <Fragment slot="title"> References </Fragment>
+
+    <Fragment slot="content">
+      <p class="text-slate-500">
+        [1] Liu, H., Li, C., Wu, Q., & Lee, Y. J. (2024). Visual instruction tuning. Advances in neural information
+        processing systems, 36.
+      </p><p class="text-slate-500">
+        [2] Rombach, R., Blattmann, A., Lorenz, D., Esser, P., & Ommer, B. (2022). High-resolution image synthesis with
+        latent diffusion models. In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition.
+      </p><p class="text-slate-500">[3] OpenAI. (2023). GPT-4 with vision (GPT-4v) system card.</p><p
+        class="text-slate-500"
+      >
+        [4] Z. Yang, L. Li, K. Lin, J. Wang, C.-C. Lin, Z. Liu, and L. Wang. The dawn of lmms: Preliminary explorations
+        with gpt-4v(ision), 2023.
+      </p><p class="text-slate-500">
+        [5] Qin, Y., Liang, S., Ye, Y., Zhu, K., Yan, L., Lu, Y., ... & Sun, M. (2023). ToolIIM: Facilitating large
+        language models to master 16000+ real-world APIs.
+      </p>
+
+      <div>
+        <div id="content" class="overflow-hidden max-h-0 transition-max-height duration-700 ease-in-out">
+          <p class="text-slate-500">
+            [6] C. Zhang, Z. Yang, J. Liu, Y. Han, X. Chen, Z. Huang, B. Fu, and G. Yu. Appagent: Multimodal agents as
+            smartphone users, 2023.
+          </p><p class="text-slate-500">
+            [7] T. Eloundou, S. Manning, P. Mishkin, and D. Rock. Gpts are gpts: An early look at the labor market
+            impact potential of large language models, 2023.
+          </p><p class="text-slate-500">
+            [8] Ormazabal, Aitor, et al. "Reka Core, Flash, and Edge: A Series of Powerful Multimodal Language Models."
+            arXiv preprint arXiv:2404.12387 (2024).
+          </p><p class="text-slate-500">
+            [9] Bai, J., Bai, S., Yang, S., Wang, S., Tan, S., Wang, P., ... & Zhou, J. (2023). Qwen-vl: A frontier
+            large vision-language model with versatile abilities. arXiv preprint arXiv:2308.12966.
+          </p><p class="text-slate-500">[10] Sora: Creating video from text. (n.d.). https://openai.com/sora</p><p
+            class="text-slate-500"
+          >
+            [11] Ma, X., Wang, Y., Jia, G., Chen, X., Liu, Z., Li, Y. F., ... & Qiao, Y. (2024). Latte: Latent diffusion
+            transformer for video generation. arXiv preprint arXiv:2401.03048.
+          </p><p class="text-slate-500">
+            [12] Shavit, Y., Agarwal, S., Brundage, M., Adler, S., O’Keefe, C., Campbell, R., ... & Robinson, D. G.
+            (2023). Practices for Governing Agentic AI Systems. Research Paper, OpenAI, December.
+          </p><p class="text-slate-500">
+            [13] N. Carlini, M. Nasr, C. A. Choquette-Choo, M. Jagielski, I. Gao, A. Awadalla, P. W. Koh, D. Ippolito,
+            K. Lee, F. Tramer, and L. Schmidt. Are aligned neural networks adversarially aligned?, 2023.
+          </p><p class="text-slate-500">
+            [14] A. Chan, R. Salganik, A. Markelius, C. Pang, N. Rajkumar, D. Krasheninnikov, L. Langosco, Z. He, Y.
+            Duan, M. Carroll, M. Lin, A. Mayhew, K. Collins, M. Molamohammadi, J. Burden, W. Zhao, S. Rismani, K.
+            Voudouris, U. Bhatt, A. Weller, D. Krueger, and T. Maharaj. Harms from increasingly agentic algorithmic
+            systems. In 2023 ACM Conference on Fairness, Accountability, and Transparency, FAccT ’23. ACM, June 2023.
+            doi: 10.1145/3593013.3594033. URL http://dx.doi.org/10.1145/3593013.3594033.
+          </p><p class="text-slate-500">
+            [15] Gemini Team. Gemini: A family of highly capable multimodal models, 2023.
+          </p><p class="text-slate-500">
+            [16] T. Shevlane, S. Farquhar, B. Garfinkel, M. Phuong, J. Whittlestone, J. Leung, D. Kokotajlo, N. Marchal,
+            M. Anderljung, N. Kolt, L. Ho, D. Siddarth, S. Avin, W. Hawkins, B. Kim, I. Gabriel, V. Bolina, J. Clark, Y.
+            Bengio, P. Christiano, and A. Dafoe. Model evaluation for extreme risks, 2023.
+          </p><p class="text-slate-500">
+            [17] L. Weidinger, M. Rauh, N. Marchal, A. Manzini, L. A. Hendricks, J. Mateos-Garcia, S. Bergman, J. Kay,
+            C. Griffin, B. Bariach, I. Gabriel, V. Rieser, and W. Isaac. Sociotechnical safety evaluation of generative
+            ai systems, 2023.
+          </p><p class="text-slate-500">
+            [18] L. Bailey, E. Ong, S. Russell, and S. Emmons. Image hijacks: Adversarial images can control generative
+            models at runtime, 2023.
+          </p><p class="text-slate-500">
+            [19] Jain, N., Schwarzschild, A., Wen, Y., Somepalli, G., Kirchenbauer, J., yeh Chiang, P., ... & Goldstein,
+            T. (2023). Baseline defenses for adversarial attacks against aligned language models.
+          </p><p class="text-slate-500">
+            [20] Robey, A., Wong, E., Hassani, H., & Pappas, G. J. (2023). SmoothLLM: Defending large language models
+            against jailbreaking attacks.
+          </p><p class="text-slate-500">
+            [21] B. Wang, W. Chen, H. Pei, C. Xie, M. Kang, C. Zhang, C. Xu, Z. Xiong, R. Dutta, R. Schaeffer, et al.
+            Decodingtrust: A comprehensive assessment of trustworthiness in gpt models. 2023.
+          </p><p class="text-slate-500">
+            [22] Chan, A., Ezell, C., Kaufmann, M., Wei, K., Hammond, L., Bradley, H., ... & Anderljung, M. (2024).
+            Visibility into AI Agents. arXiv preprint arXiv:2401.13138.
+          </p><p class="text-slate-500">
+            [23] Huang, Q., Dong, X., Zhang, P., Wang, B., He, C., Wang, J., Lin, D., Zhang, W., & Yu, N. (2023). Opera:
+            Alleviating hallucination in multi-modal large language models via over-trust penalty and
+            retrospection-allocation.
+          </p><p class="text-slate-500">
+            [24] Sharma, M., Tong, M., Korbak, T., Duvenaud, D., Askell, A., Bowman, S. R., ... & Perez, E. (2023).
+            Towards understanding sycophancy in language models.
+          </p><p class="text-slate-500">
+            [25] Meng, K., Bau, D., Andonian, A., & Belinkov, Y. (2022). Locating and editing factual associations in
+            GPT.
+          </p><p class="text-slate-500">
+            [26] A. Zou, L. Phan, S. Chen, J. Campbell, P. Guo, R. Ren, A. Pan, X. Yin, M. Mazeika, A.-K. Dombrowski, S.
+            Goel, N. Li, M. J. Byun, Z. Wang, A. Mallen, S. Basart, S. Koyejo, D. Song, M. Fredrikson, J. Z. Kolter, and
+            D. Hendrycks. Representation engineering: A top-down approach to ai transparency, 2023.
+          </p><p class="text-slate-500">
+            [27] Kirchenbauer, J., Geiping, J., Wen, Y., Katz, J., Miers, I., & Goldstein, T. (2023). A watermark for
+            large language models. In Proceedings of the 40th International Conference on Machine Learning.
+          </p><p class="text-slate-500">
+            [28] Nasr, M., Carlini, N., Hayase, J., Jagielski, M., Cooper, A. F., Ippolito, D., ... & Lee, K. (2023).
+            Scalable extraction of training data from (production) language models.
+          </p><p class="text-slate-500">
+            [29] S. R. Bowman, J. Hyun, E. Perez, E. Chen, C. Pettit, S. Heiner, K. Lukoˇsi ̄ut ̇e, A. Askell, A. Jones,
+            A. Chen, A. Goldie, A. Mirhoseini, C. McKinnon, C. Olah, D. Amodei, D. Amodei, D. Drain, D. Li, E.
+            Tran-Johnson, J. Kernion, J. Kerr, J. Mueller, J. Ladish, J. Landau, K. Ndousse, L. Lovitt, N. Elhage, N.
+            Schiefer, N. Joseph, N. Mercado, N. DasSarma, R. Larson, S. McCandlish, S. Kundu, S. Johnston, S. Kravec, S.
+            E. Showk, S. Fort, T. Telleen-Lawton, T. Brown, T. Henighan, T. Hume, Y. Bai, Z. Hatfield-Dodds, B. Mann,
+            and J. Kaplan. Measuring progress on scalable oversight for large language models, 2022.
+          </p><p class="text-slate-500">
+            [30] Yao, Y., Xu, X., & Liu, Y. (2023). Large language model unlearning. arXiv preprint arXiv:2310.10683.
+          </p><p class="text-slate-500">
+            [31] S. Casper, C. Ezell, C. Siegmann, N. Kolt, T. L. Curtis, B. Bucknall, A. Haupt, K. Wei, J. Scheurer, M.
+            Hobbhahn, L. Sharkey, S. Krishna, M. V. Hagen, S. Alberti, A. Chan, Q. Sun, M. Gerovitch, D. Bau, M.
+            Tegmark, D. Krueger, and D. Hadfield-Menell. Black-box access is insufficient for rigorous ai audits, 2024.
+          </p><p class="text-slate-500">
+            [32] M. Bhatt, S. Chennabasappa, C. Nikolaidis, S. Wan, I. Evtimov, D. Gabi, D. Song, F. Ahmad, C.
+            Aschermann, L. Fontana, S. Frolov, R. P. Giri, D. Kapil, Y. Kozyrakis, D. LeBlanc, J. Milazzo, A. Straumann,
+            G. Synnaeve, V. Vontimitta, S. Whitman, and J. Saxe. Purple llama cyberseceval: A secure coding benchmark
+            for language models, 2023.
+          </p><p class="text-slate-500">
+            [33] D. Ganguli, L. Lovitt, J. Kernion, A. Askell, Y. Bai, S. Kadavath, B. Mann, E. Perez, N. Schiefer, K.
+            Ndousse, A. Jones, S. Bowman, A. Chen, T. Conerly, N. DasSarma, D. Drain, N. Elhage, S. El-Showk, S. Fort,
+            Z. Hatfield-Dodds, T. Henighan, D. Hernandez, T. Hume, J. Jacobson, S. Johnston, S. Kravec, C. Olsson, S.
+            Ringer, E. Tran-Johnson, D. Amodei, T. Brown, N. Joseph, S. McCandlish, C. Olah, J. Kaplan, and J. Clark.
+            Red teaming language models to reduce harms: Methods, scaling behaviors, and lessons learned, 2022.
+          </p><p class="text-slate-500">
+            [34] Henderson, P., Mitchell, E., Manning, C., Jurafsky, D., & Finn, C. (2023). Self-destructing models:
+            Increasing the costs of harmful dual uses of foundation models. In Proceedings of the 2023 AAAI/ACM
+            Conference on AI, Ethics, and Society, AIES ’23.
+          </p><p class="text-slate-500">
+            [35] Y. Dong, H. Chen, J. Chen, Z. Fang, X. Yang, Y. Zhang, Y. Tian, H. Su, and J. Zhu. How robust is
+            google’s bard to adversarial image attacks?, 2023.
+          </p>
+          <p class="text-slate-500">
+            [36] Yin, Z., Wang, J., Cao, J., Shi, Z., Liu, D., Li, M., Sheng, L., Bai, L., Huang, X., Wang, Z., & others
+            (2023). LAMM: Language-Assisted Multi-Modal Instruction-Tuning Dataset, Framework, and Benchmark. arXiv
+            preprint arXiv:2306.06687.
+          </p>
+        </div>
+      </div>
+      <div class="flex justify-center mt-8"><Button id="toggleButton" class="cursor-pointer"> Expand </Button></div>
+    </Fragment>
+    <script>
+      const button = document.getElementById('toggleButton');
+      const content = document.getElementById('content');
+      let isOpen = false;
+      if (button && content) {
+        button.addEventListener('click', () => {
+          if (!isOpen) {
+            content.style.maxHeight = content.scrollHeight + 'px';
+            button.textContent = 'Collapse';
+            isOpen = true;
+          } else {
+            content.style.maxHeight = '';
+            button.textContent = 'Expand';
+            isOpen = false;
+          }
+        });
+      }
+    </script>
+
+    <!-- Brands Widget ****************** -->
+    <!-- 
+  <Sponsor
+    id="Sponsor"
+    tagline="Sponsor"
+    icons={[]}
+    images={[
+      {
+        src: 'https://cdn.pixabay.com/photo/2015/05/26/09/37/paypal-784404_1280.png',
+        alt: 'Paypal',
+      },
+      {
+        src: 'https://cdn.pixabay.com/photo/2021/12/06/13/48/visa-6850402_1280.png',
+        alt: 'Visa',
+      },
+      {
+        src: 'https://cdn.pixabay.com/photo/2013/10/01/10/29/ebay-189064_1280.png',
+        alt: 'Ebay',
+      },
+
+      {
+        src: 'https://cdn.pixabay.com/photo/2015/04/13/17/45/icon-720944_1280.png',
+        alt: 'Youtube',
+      },
+      {
+        src: 'https://cdn.pixabay.com/photo/2013/02/12/09/07/microsoft-80658_1280.png',
+        alt: 'Microsoft',
+      },
+      {
+        src: 'https://cdn.pixabay.com/photo/2015/04/23/17/41/node-js-736399_1280.png',
+        alt: 'Node JS',
+      },
+      {
+        src: 'https://cdn.pixabay.com/photo/2015/10/31/12/54/google-1015751_1280.png',
+        alt: 'Google',
+      },
+      {
+        src: 'https://cdn.pixabay.com/photo/2021/12/06/13/45/meta-6850393_1280.png',
+        alt: 'Meta',
+      },
+      {
+        src: 'https://cdn.pixabay.com/photo/2013/01/29/22/53/yahoo-76684_1280.png',
+        alt: 'Yahoo',
+      },
+    ]}
+  /> -->
+  </Content>
+</Layout>
