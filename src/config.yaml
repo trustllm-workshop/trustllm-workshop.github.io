@@ -1,6 +1,6 @@
 site:
-  name: ICML TiFA Workshop
-  site: 'https://icml-tifa.github.io'
+  name: NeurIPS 2025 TrustLLM Workshop
+  site: 'https://trustllm-workshop.github.io'
   base: '/'
   trailingSlash: false
 
@@ -9,14 +9,14 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: ICML TiFA Workshop
-    template: '%s — ICML TiFA Workshop'
-  description: 'ICML TiFA WorkShop'
+    default: NeurIPS 2025 TrustLLM Workshop
+    template: '%s — NeurIPS 2025 TrustLLM Workshop'
+  description: 'NeurIPS 2025 TrustLLM WorkShop'
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: ICML TiFA Workshop
+    site_name: NeurIPS 2025 TrustLLM Workshop
     images:
       - url: '~/assets/images/default.png'
         width: 1200
