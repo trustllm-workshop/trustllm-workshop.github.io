@@ -22,10 +22,10 @@ export const headerData = {
     //   text: 'SC',
     //   href: getPermalink('/#Steering-Committee'),
     // },
-    {
-      text:'Challenge',
-      href:'/challenges'
-    }
+    // {
+    //   text:'Challenge',
+    //   href:'/challenges'
+    // }
   ],
 };
 
